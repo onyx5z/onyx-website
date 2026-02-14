@@ -374,6 +374,69 @@ h2 {
   }
 }
 
+.section-eyebrow {
+  display: inline-block;
+  margin: 0 0 0.6rem;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-weight: 600;
+  font-family: "Space Grotesk", sans-serif;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 0.25rem 0.75rem;
+}
+
+.beyond-section {
+  border-top: 1px solid #262e37;
+  background: linear-gradient(180deg, rgba(135, 215, 172, 0.03), transparent 60%);
+}
+
+.beyond-grid {
+  margin-top: 1.4rem;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.8rem;
+}
+
+.beyond-card {
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--bg-2);
+  padding: 1.1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  transition: border-color 200ms ease, background 200ms ease;
+}
+
+.beyond-card:hover {
+  border-color: #4a5664;
+  background: var(--surface-soft);
+}
+
+.beyond-icon {
+  font-size: 1.2rem;
+  line-height: 1;
+  opacity: 0.6;
+}
+
+.beyond-card h3 {
+  margin: 0;
+  font-size: 0.95rem;
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.beyond-card p {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 0.87rem;
+  line-height: 1.55;
+}
+
 @media (max-width: 930px) {
   .hero {
     min-height: auto;
@@ -381,8 +444,13 @@ h2 {
 
   .hero-grid,
   .service-grid,
-  .timeline {
+  .timeline,
+  .beyond-grid {
     grid-template-columns: 1fr;
+  }
+
+  .beyond-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .metric-a,
@@ -395,6 +463,10 @@ h2 {
 
 @media (max-width: 1120px) and (min-width: 931px) {
   .service-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .beyond-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
