@@ -181,47 +181,46 @@ h1 {
   background:
     linear-gradient(130deg, rgba(255, 184, 107, 0.06), transparent 42%),
     var(--bg-2);
-  padding: 1rem;
+  padding: 1.25rem;
   box-shadow: var(--shadow);
-  position: relative;
-  min-height: 350px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
 }
 
 .hero-visual::after {
   content: "Architecture. Delivery. Reliability.";
-  position: absolute;
-  right: 1rem;
-  bottom: 1rem;
+  display: block;
+  text-align: right;
   font-size: 0.68rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: #8995a5;
+  margin-top: 0.25rem;
 }
 
 .metric-card {
-  position: absolute;
   border-radius: 14px;
   border: 1px solid var(--line);
   background: rgba(20, 25, 32, 0.92);
-  padding: 0.95rem;
-  width: 62%;
+  padding: 0.95rem 1.1rem;
   animation: drift 7s ease-in-out infinite;
 }
 
 .metric-a {
-  top: 1rem;
-  right: 1rem;
+  align-self: flex-end;
+  width: 72%;
 }
 
 .metric-b {
-  top: 8rem;
-  left: 1rem;
+  align-self: flex-start;
+  width: 72%;
   animation-delay: 0.8s;
 }
 
 .metric-c {
-  right: 2rem;
-  bottom: 3.2rem;
+  align-self: center;
+  width: 72%;
   animation-delay: 1.5s;
 }
 
@@ -386,25 +385,11 @@ h2 {
     grid-template-columns: 1fr;
   }
 
-  .hero-visual {
-    min-height: 285px;
-  }
-
-  .metric-card {
-    width: min(85%, 320px);
-  }
-
-  .metric-a {
-    right: 0.8rem;
-  }
-
-  .metric-b {
-    left: 0.8rem;
-  }
-
+  .metric-a,
+  .metric-b,
   .metric-c {
-    right: 1.2rem;
-    bottom: 3.3rem;
+    width: 85%;
+    align-self: center;
   }
 }
 
@@ -413,4 +398,4 @@ h2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
-    </style>
+
