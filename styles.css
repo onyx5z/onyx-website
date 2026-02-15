@@ -852,19 +852,19 @@ h2 {
 /* ── Skip Link ── */
 .skip-link {
   position: absolute;
-  top: -100px;
-  left: 1rem;
-  z-index: 100;
+  left: -9999px;
+  z-index: 1000;
   padding: 0.75rem 1.5rem;
   background: var(--accent);
   color: var(--bg);
   text-decoration: none;
   font-weight: 600;
   border-radius: var(--radius);
-  transition: top 0.2s;
+  white-space: nowrap;
 }
 
 .skip-link:focus {
+  left: 1rem;
   top: 1rem;
 }
 
