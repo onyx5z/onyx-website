@@ -1,0 +1,55 @@
+#devlog
+
+---
+title: 'This blog represents the development process of the ERP' 
+publishedAt: '2025-04-02'
+summary: 'Engineering Development Log: Enterprise ERP Project'
+---
+### 2026.02.02 | 10:45
+**Subject: Architectural Pivot to C# & React (Full-Stack Decoupling)**
+**Technical Note:** Following the evaluation of the Python MVP, the decision has been made to move to a **C# ASP.NET Core** backend using **API-first logic**. This ensures a strict contract between the data layer and the UI. 
+*   **Backend:** Implementing RESTful endpoints with specialized DTOs (Data Transfer Objects) to handle complex Hungarian accounting schemas. 
+*   **Frontend:** Migrating from HTMX to **React**. While HTMX was efficient for simple CRUD, the required complexity for the Inventory and Rotating Assets modules demands the granular state management and component lifecycle hooks provided by React. Utilizing a library for high-density data tables and form validation.
+*   **Current Build:** `0.1.0` (Initialization of the C# Core).
+
+### 2025.10.30 | 12:47
+**Subject: Intermediate System Audit & Migration Preparation**
+**Technical Note:** Conducted a comprehensive audit of the Python business logic. The "Big Wall" of Hungarian legislation compliance is successfully mapped. Preparations for migrating the core engine to a compiled, type-safe environment are underway.
+*   **Status:** Baseline logic verified. Database schema for SQL Server migration initialized.
+![erp_structure](/images/erp_stucr.png)
+
+### 2025.04.08 | 21:41
+**Subject: Python MVP Completion & Scalability Review**
+**Technical Note:** The MVP in Python is finalized. It successfully captures invoice data, manages journal entries, and processes incoming/outgoing invoices according to local legislation. 
+*   **Strategy Shift:** Decided to migrate to a more robust framework. While initially considering Spring Boot, the project roadmap is now leaning towards C# for better integration with enterprise local-server environments. The HTMX frontend remains a placeholder during the backend logic porting.
+
+### 2025.04.06 | 14:37
+**Subject: UI Paradigm Shift – HTMX Experimentation**
+**Technical Note:** Transitioning away from purely JS-dependent frontends (Next.js/Shadcn). 
+*   **Observation:** A separate frontend feels like overkill for the current scope. 
+*   **Action:** Experimenting with **HTMX, HTML, and CSS** to keep the frontend "dumb" and the backend "smart." Focusing on streamlining workflow over aesthetic complexity.
+
+### 2025.04.03 | 00:46
+**Subject: Module Consolidation & Git Rollback**
+**Technical Note:** Attempted to merge `financial_reporting` into the `core_accounting` app to simplify the service layer.
+*   **Result:** Failure due to tight coupling and dependency loops. 
+*   **Action:** Performed a hard reset to the previous stable Git version. Modularity is essential for the planned API calls in the inventory modules.
+
+### 2025.04.02 | 17:37
+**Subject: Initialization of "Pride Versioning"**
+**Technical Note:** Implementing a simplified semantic versioning system named "Pride." 
+*   **Structure:** `[Proud Version].[Features].[Bugs]`
+    *   `1.x.x`: Major architectural releases.
+    *   `x.1.x`: Updates not affecting API contracts.
+    *   `x.x.1`: Hotfixes and patches.
+*   **Current Build:** `0.0.1`
+
+### 2025.04.02 | 17:18
+**Subject: Version Control Resolution**
+**Technical Note:** Debugged a critical Git sync issue.
+*   **Root Cause:** The project directory was incorrectly initialized as a **Git submodule** during the migration from local to GitHub.
+*   **Resolution:** Re-initialized the repository properly, mapped the remote origin, and verified branch integrity.
+
+### 2025.04.02 | 15:11
+**Subject: Git Metadata Conflict**
+**Technical Note:** Encountered synchronization errors during the transition from a local Git repository to GitHub. Repository state is currently inconsistent. Investigating metadata mismatches.
